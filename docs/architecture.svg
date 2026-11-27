@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="600" viewBox="0 0 1240 600">
+  <style>
+    text { font-family: Inter, -apple-system, "Helvetica Neue", Arial, sans-serif; }
+    .name  { font-size: 18px; font-weight: 600; fill: #0D0D0D; }
+    .meta  { font-size: 14px; fill: #6B6B6B; }
+    .group { font-size: 16px; font-weight: 600; fill: #0D0D0D; }
+    .lbl   { font-size: 14px; fill: #0D0D0D; }
+    .lbln  { font-size: 14px; fill: #1B2A6B; }
+    .cell  { font: 15px "SF Mono", Menlo, Consolas, monospace; fill: #0D0D0D; }
+    .cellg { font: 15px "SF Mono", Menlo, Consolas, monospace; fill: #9A9A9A; }
+    .h     { font-size: 18px; font-weight: 600; fill: #0D0D0D; }
+    .step  { font-size: 15px; fill: #2B2B2B; }
+    .note  { font-size: 14px; fill: #6B6B6B; }
+    .num   { font-size: 12px; font-weight: 700; fill: #FFFFFF; }
+    .box   { fill: #FFFFFF; stroke: #0D0D0D; stroke-width: 1.25; }
+    .zone  { fill: #F5F6F8; stroke: #0D0D0D; stroke-width: 1.25; }
+    .line  { fill: none; stroke: #0D0D0D; stroke-width: 1.25; }
+    .dash  { fill: none; stroke: #1B2A6B; stroke-width: 1.25; stroke-dasharray: 5 4; }
+    .badge { fill: #1B2A6B; }
+  </style>
+  <defs>
+    <marker id="k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M1.5 1.5 L9 5 L1.5 8.5" fill="none" stroke="#0D0D0D" stroke-width="1.2"/>
+    </marker>
+    <marker id="n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M1.5 1.5 L9 5 L1.5 8.5" fill="none" stroke="#1B2A6B" stroke-width="1.2"/>
+    </marker>
+  </defs>
+
+  <rect x="1" y="1" width="1238" height="598" rx="10" fill="#FFFFFF" stroke="#D9D9D9"/>
+
+  <!-- Publisher -->
+  <rect class="box" x="576" y="48" width="220" height="60" rx="8"/>
+  <text class="name" x="686" y="84" text-anchor="middle">Publisher</text>
+
+  <!-- Broker and log -->
+  <rect class="zone" x="60" y="170" width="700" height="210" rx="10"/>
+  <text class="group" x="84" y="202">Broker</text>
+
+  <g stroke-width="1">
+    <rect x="140" y="252" width="52" height="52" fill="#FFFFFF" stroke="#8C8C8C"/>
+    <rect x="192" y="252" width="52" height="52" fill="#FFFFFF" stroke="#8C8C8C"/>
+    <rect x="244" y="252" width="52" height="52" fill="#FFFFFF" stroke="#8C8C8C"/>
+    <rect x="296" y="252" width="52" height="52" fill="#FFFFFF" stroke="#8C8C8C"/>
+    <rect x="348" y="252" width="52" height="52" fill="#DCE5FB" stroke="#8C8C8C"/>
+    <rect x="400" y="252" width="52" height="52" fill="#DCE5FB" stroke="#8C8C8C"/>
+    <rect x="452" y="252" width="52" height="52" fill="#DCE5FB" stroke="#8C8C8C"/>
+    <rect x="504" y="252" width="52" height="52" fill="#DCE5FB" stroke="#8C8C8C"/>
+    <rect x="556" y="252" width="52" height="52" fill="#DCE5FB" stroke="#8C8C8C"/>
+    <rect x="608" y="252" width="52" height="52" fill="#DCE5FB" stroke="#8C8C8C"/>
+    <rect x="660" y="252" width="52" height="52" fill="#FFFFFF" stroke="#9A9A9A" stroke-dasharray="3 3"/>
+  </g>
+  <g text-anchor="middle">
+    <text class="cell" x="166" y="283">0</text>
+    <text class="cell" x="218" y="283">1</text>
+    <text class="cell" x="270" y="283">2</text>
+    <text class="cell" x="322" y="283">3</text>
+    <text class="cell" x="374" y="283">4</text>
+    <text class="cell" x="426" y="283">5</text>
+    <text class="cell" x="478" y="283">6</text>
+    <text class="cell" x="530" y="283">7</text>
+    <text class="cell" x="582" y="283">8</text>
+    <text class="cell" x="634" y="283">9</text>
+    <text class="cellg" x="686" y="283">10</text>
+  </g>
+  <text class="meta" x="140" y="236">Append-only log</text>
+
+  <!-- Subscribers -->
+  <rect class="box" x="264" y="470" width="220" height="68" rx="8"/>
+  <text class="name" x="374" y="499" text-anchor="middle">Subscriber 2</text>
+  <text class="meta" x="374" y="522" text-anchor="middle">offset 4</text>
+
+  <rect class="box" x="576" y="470" width="220" height="68" rx="8"/>
+  <text class="name" x="686" y="499" text-anchor="middle">Subscriber 1</text>
+  <text class="meta" x="686" y="522" text-anchor="middle">offset 10, waiting</text>
+
+  <!-- 1 publish -->
+  <line class="line" x1="686" y1="108" x2="686" y2="249" marker-end="url(#k)"/>
+  <circle class="badge" cx="686" cy="140" r="11"/><text class="num" x="686" y="144" text-anchor="middle">1</text>
+  <text class="lbl" x="706" y="145">publish</text>
+
+  <!-- 2 wake -->
+  <line class="dash" x1="686" y1="304" x2="686" y2="467" marker-end="url(#n)"/>
+  <circle class="badge" cx="686" cy="424" r="11"/><text class="num" x="686" y="428" text-anchor="middle">2</text>
+  <text class="lbln" x="706" y="429">wake</text>
+
+  <!-- 3 read -->
+  <line class="line" x1="374" y1="304" x2="374" y2="467" marker-end="url(#k)"/>
+  <circle class="badge" cx="374" cy="424" r="11"/><text class="num" x="374" y="428" text-anchor="middle">3</text>
+  <text class="lbl" x="394" y="429">read 4 to 9</text>
+
+  <!-- Steps -->
+  <line x1="840" y1="48" x2="840" y2="552" stroke="#E3E3E3"/>
+  <text class="h" x="872" y="70">How it works</text>
+
+  <circle class="badge" cx="883" cy="111" r="11"/><text class="num" x="883" y="115" text-anchor="middle">1</text>
+  <text class="step" x="906" y="116">The publisher appends the message</text>
+  <text class="step" x="906" y="138">to the end of the log.</text>
+
+  <circle class="badge" cx="883" cy="183" r="11"/><text class="num" x="883" y="187" text-anchor="middle">2</text>
+  <text class="step" x="906" y="188">The broker wakes every subscriber</text>
+  <text class="step" x="906" y="210">that is waiting for new messages.</text>
+
+  <circle class="badge" cx="883" cy="255" r="11"/><text class="num" x="883" y="259" text-anchor="middle">3</text>
+  <text class="step" x="906" y="260">Each subscriber reads from its own</text>
+  <text class="step" x="906" y="282">offset, handles the messages, then</text>
+  <text class="step" x="906" y="304">moves its offset forward.</text>
+
+  <text class="note" x="872" y="372">A read never deletes a message, so a</text>
+  <text class="note" x="872" y="393">late subscriber still starts at offset 0</text>
+  <text class="note" x="872" y="414">and gets every message.</text>
+
+  <text class="note" x="872" y="462">On shutdown, the broker takes no new</text>
+  <text class="note" x="872" y="483">messages. Subscribers finish the log,</text>
+  <text class="note" x="872" y="504">then stop.</text>
+</svg>
